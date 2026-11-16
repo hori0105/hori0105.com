@@ -1,71 +1,386 @@
+
 <!DOCTYPE html>
-
 <html lang="ja">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="description" content="Kahlheit Minecraft Server 公式サイト。Java版・統合版対応。サバイバルとミニゲームを楽しもう。">
-
 <meta name="theme-color" content="#101014">
 
 <title>KAHLHEIT | Minecraft Server</title>
 
 <style>
-
 :root {
-
   --bg: #101014;
-
   --panel: #19191f;
-
   --red: #e52e3b;
-
   --white: #f5f5f7;
-
   --muted: #a5a5ad;
-
 }
 
 * {
-
   box-sizing: border-box;
-
   margin: 0;
-
   padding: 0;
-
 }
 
 html {
-
   scroll-behavior: smooth;
-
+  scroll-padding-top: 90px;
 }
 
 body {
-
   background: var(--bg);
-
   color: var(--white);
-
   font-family: system-ui, -apple-system, sans-serif;
-
   line-height: 1.8;
-
 }
 
 a {
-
   color: inherit;
-
   text-decoration: none;
-
 }
 
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(16,16,20,.94);
+  border-bottom: 1px solid #292930;
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--red);
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.nav-links a {
+  transition: .2s;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+/* HERO */
+.hero {
+  min-height: 650px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 90px 24px;
+  background:
+    linear-gradient(rgba(0,0,0,.48), rgba(10,10,14,.92)),
+    url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=85")
+    center/cover;
+  border-bottom: 1px solid #292930;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.eyebrow {
+  color: #ff6871;
+  letter-spacing: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 10vw, 100px);
+  line-height: 1.15;
+  letter-spacing: 8px;
+  margin: 20px 0;
+  font-weight: 900;
+  text-shadow: 0 0 35px rgba(229,46,59,.45);
+}
+
+.hero p {
+  color: #d0d0d5;
+  margin-bottom: 32px;
+}
+
+.button {
+  display: inline-block;
+  padding: 13px 30px;
+  background: var(--red);
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.button:hover {
+  background: #ff4653;
+  transform: translateY(-2px);
+}
+
+.button-outline {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid #777;
+  border-radius: 4px;
+  margin-left: 8px;
+  transition: .2s;
+}
+
+.button-outline:hover {
+  border-color: var(--red);
+  color: #ff6871;
+}
+
+/* SECTIONS */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 85px 24px;
+}
+
+.section-title {
+  margin-bottom: 38px;
+}
+
+.section-title span {
+  display: block;
+  color: var(--red);
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  margin-top: 5px;
+}
+
+.section-title p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* ABOUT */
+.about-text {
+  max-width: 760px;
+  color: #c5c5cc;
+}
+
+/* FEATURES */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid #2b2b33;
+  border-radius: 8px;
+  padding: 28px;
+  transition: .2s;
+}
+
+.card:hover {
+  border-color: var(--red);
+  transform: translateY(-4px);
+}
+
+.card .number {
+  color: var(--red);
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.card h3 {
+  margin: 12px 0;
+  font-size: 20px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* SERVER */
+.server-panel {
+  background: linear-gradient(135deg, #21151a, #19191f);
+  border: 1px solid #54252d;
+  border-radius: 10px;
+  padding: 35px;
+}
+
+.server-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.server-table th,
+.server-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #38333a;
+  text-align: left;
+  font-size: 14px;
+}
+
+.server-table th {
+  color: #ff6871;
+  width: 35%;
+}
+
+.status {
+  display: inline-block;
+  color: #f4c66c;
+  background: #42351e;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.gallery-item {
+  aspect-ratio: 16 / 10;
+  border: 1px dashed #555;
+  border-radius: 8px;
+  background: #1b1b22;
+  display: grid;
+  place-items: center;
+  color: #888;
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+}
+
+/* RULES */
+.rules {
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 28px;
+  color: #c5c5cc;
+}
+
+.rules li {
+  margin: 8px 0 8px 22px;
+}
+
+/* JOIN */
+.join {
+  text-align: center;
+  background:
+    linear-gradient(rgba(12,12,16,.9), rgba(12,12,16,.95)),
+    radial-gradient(circle at center, #68232d, #101014);
+  border-top: 1px solid #392128;
+  border-bottom: 1px solid #392128;
+  max-width: none;
+}
+
+.join-inner {
+  max-width: 750px;
+  margin: auto;
+}
+
+.join h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.join p {
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  color: #777;
+  font-size: 12px;
+}
+
+footer strong {
+  color: var(--red);
+  letter-spacing: 3px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links {
+    gap: 13px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 540px;
+  }
+
+  .hero h1 {
+    letter-spacing: 4px;
+  }
+
+  .cards,
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 65px 20px;
+  }
+
+  .server-panel {
+    padding: 18px;
+    overflow-x: auto;
+  }
+
+  .server-table th,
+  .server-table td {
+    font-size: 12px;
+    padding: 12px 8px;
+  }
+
+  .join h2 {
+    font-size: 28px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
 <header>
   <nav class="nav">
     <a href="#" class="logo">KAHLHEIT</a>
@@ -82,872 +397,211 @@ a {
   </nav>
 </header>
 
-.nav {
-
-  max-width: 1100px;
-
-  margin: auto;
-
-  padding: 16px 24px;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  gap: 20px;
-
-}
-
-.logo {
-
-  color: var(--red);
-
-  font-size: 25px;
-
-  font-weight: 900;
-
-  letter-spacing: 3px;
-
-}
-
-.nav-links {
-
-  display: flex;
-
-  gap: 22px;
-
-  font-size: 13px;
-
-  color: #ccc;
-
-}
-
-.nav-links a:hover {
-
-  color: var(--red);
-
-}
-
-.hero {
-
-  min-height: 650px;
-
-  display: grid;
-
-  place-items: center;
-
-  text-align: center;
-
-  padding: 90px 24px;
-
-  background:
-
-    linear-gradient(rgba(0,0,0,.48), rgba(10,10,14,.92)),
-
-    url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=85")
-
-    center/cover;
-
-  border-bottom: 1px solid #292930;
-
-}
-
-.hero-content {
-
-  max-width: 850px;
-
-}
-
-.eyebrow {
-
-  color: #ff6871;
-
-  letter-spacing: 5px;
-
-  font-size: 12px;
-
-  font-weight: bold;
-
-}
-
-.hero h1 {
-
-  font-size: clamp(48px, 10vw, 100px);
-
-  line-height: 1.15;
-
-  letter-spacing: 8px;
-
-  margin: 20px 0;
-
-  font-weight: 900;
-
-  text-shadow: 0 0 35px rgba(229,46,59,.45);
-
-}
-
-.hero p {
-
-  color: #d0d0d5;
-
-  margin-bottom: 32px;
-
-}
-
-.button {
-
-  display: inline-block;
-
-  padding: 13px 30px;
-
-  background: var(--red);
-
-  color: white;
-
-  border-radius: 4px;
-
-  font-weight: bold;
-
-  transition: .2s;
-
-}
-
-.button:hover {
-
-  background: #ff4653;
-
-  transform: translateY(-2px);
-
-}
-
-.button-outline {
-
-  display: inline-block;
-
-  padding: 12px 28px;
-
-  border: 1px solid #777;
-
-  border-radius: 4px;
-
-  margin-left: 8px;
-
-}
-
-section {
-
-  max-width: 1100px;
-
-  margin: auto;
-
-  padding: 85px 24px;
-
-}
-
-.section-title {
-
-  margin-bottom: 38px;
-
-}
-
-.section-title span {
-
-  display: block;
-
-  color: var(--red);
-
-  font-size: 12px;
-
-  letter-spacing: 4px;
-
-  font-weight: bold;
-
-}
-
-.section-title h2 {
-
-  font-size: 32px;
-
-  margin-top: 5px;
-
-}
-
-.section-title p {
-
-  color: var(--muted);
-
-  font-size: 14px;
-
-  margin-top: 8px;
-
-}
-
-.about-text {
-
-  max-width: 760px;
-
-  color: #c5c5cc;
-
-}
-
-.cards {
-
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 18px;
-
-}
-
-.card {
-
-  background: var(--panel);
-
-  border: 1px solid #2b2b33;
-
-  border-radius: 8px;
-
-  padding: 28px;
-
-  transition: .2s;
-
-}
-
-.card:hover {
-
-  border-color: var(--red);
-
-  transform: translateY(-4px);
-
-}
-
-.card .number {
-
-  color: var(--red);
-
-  font-size: 13px;
-
-  letter-spacing: 2px;
-
-}
-
-.card h3 {
-
-  margin: 12px 0;
-
-  font-size: 20px;
-
-}
-
-.card p {
-
-  color: var(--muted);
-
-  font-size: 14px;
-
-}
-
-.server-panel {
-
-  background: linear-gradient(135deg, #21151a, #19191f);
-
-  border: 1px solid #54252d;
-
-  border-radius: 10px;
-
-  padding: 35px;
-
-}
-
-.server-table {
-
-  width: 100%;
-
-  border-collapse: collapse;
-
-}
-
-.server-table th,
-
-.server-table td {
-
-  padding: 15px 12px;
-
-  border-bottom: 1px solid #38333a;
-
-  text-align: left;
-
-  font-size: 14px;
-
-}
-
-.server-table th {
-
-  color: #ff6871;
-
-  width: 35%;
-
-}
-
-.status {
-
-  display: inline-block;
-
-  color: #f4c66c;
-
-  background: #42351e;
-
-  padding: 3px 10px;
-
-  border-radius: 20px;
-
-  font-size: 12px;
-
-}
-
-.gallery {
-
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 14px;
-
-}
-
-.gallery-item {
-
-  aspect-ratio: 16 / 10;
-
-  border: 1px dashed #555;
-
-  border-radius: 8px;
-
-  background: #1b1b22;
-
-  display: grid;
-
-  place-items: center;
-
-  color: #888;
-
-  text-align: center;
-
-  padding: 15px;
-
-  font-size: 13px;
-
-}
-
-.rules {
-
-  background: var(--panel);
-
-  border-radius: 8px;
-
-  padding: 28px;
-
-  color: #c5c5cc;
-
-}
-
-.rules li {
-
-  margin: 8px 0 8px 22px;
-
-}
-
-.join {
-
-  text-align: center;
-
-  background:
-
-    linear-gradient(rgba(12,12,16,.9), rgba(12,12,16,.95)),
-
-    radial-gradient(circle at center, #68232d, #101014);
-
-  border-top: 1px solid #392128;
-
-  border-bottom: 1px solid #392128;
-
-  max-width: none;
-
-}
-
-.join-inner {
-
-  max-width: 750px;
-
-  margin: auto;
-
-}
-
-.join h2 {
-
-  font-size: 36px;
-
-  margin-bottom: 15px;
-
-}
-
-.join p {
-
-  color: var(--muted);
-
-  margin-bottom: 28px;
-
-}
-
-footer {
-
-  text-align: center;
-
-  padding: 35px 20px;
-
-  color: #777;
-
-  font-size: 12px;
-
-}
-
-footer strong {
-
-  color: var(--red);
-
-  letter-spacing: 3px;
-
-}
-
-@media (max-width: 700px) {
-
-  .nav {
-
-    flex-direction: column;
-
-    gap: 8px;
-
-  }
-
-  .nav-links {
-
-    gap: 13px;
-
-    flex-wrap: wrap;
-
-    justify-content: center;
-
-    font-size: 11px;
-
-  }
-
-  .hero {
-
-    min-height: 540px;
-
-  }
-
-  .hero h1 {
-
-    letter-spacing: 4px;
-
-  }
-
-  .cards,
-
-  .gallery {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  section {
-
-    padding: 65px 20px;
-
-  }
-
-  .server-panel {
-
-    padding: 18px;
-
-    overflow-x: auto;
-
-  }
-
-  .server-table th,
-
-  .server-table td {
-
-    font-size: 12px;
-
-    padding: 12px 8px;
-
-  }
-
-  .join h2 {
-
-    font-size: 28px;
-
-  }
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-  <nav class="nav">
-
-    <a href="#" class="logo">KAHLHEIT</a>
-
-    <div class="nav-links">
-
-      <a href="#about">ABOUT</a>
-
-      <a href="#features">FEATURES</a>
-
-      <a href="#server">SERVER</a>
-
-      <a href="#gallery">GALLERY</a>
-
-      <a href="#rules">RULES</a>
-
-      <a href="#join">JOIN</a>
-
-    </div>
-
-  </nav>
-
-</header>
-
 <main>
 
+<!-- HERO -->
 <div class="hero">
-
   <div class="hero-content">
-
     <div class="eyebrow">MINECRAFT MULTIPLAYER SERVER</div>
 
     <h1>KAHLHEIT</h1>
 
     <p>
-
       YOUR WORLD. YOUR STORY.<br>
-
       新しい世界、新しい仲間、新しい冒険。
-
     </p>
 
     <a href="#about" class="button">EXPLORE SERVER</a>
-
     <a href="#join" class="button-outline">JOIN US</a>
-
   </div>
-
 </div>
 
+<!-- ABOUT -->
 <section id="about">
-
   <div class="section-title">
-
     <span>01 / ABOUT</span>
-
     <h2>ABOUT KAHLHEIT</h2>
-
     <p>Kahlheitについて</p>
-
   </div>
 
   <div class="about-text">
-
     <p>
-
       Kahlheitは、Minecraftを楽しむプレイヤーのための
-
       マルチプレイサーバーです。
-
     </p>
 
     <br>
 
     <p>
-
       サバイバルでの冒険や建築、仲間との協力、
-
       そしてミニゲームなど、さまざまな遊び方を楽しめます。
-
     </p>
 
     <br>
 
     <p>
-
       Java版・統合版のプレイヤーが集まり、
-
       自分だけの物語を作り上げる場所を目指しています。
-
     </p>
-
   </div>
-
 </section>
 
+<!-- FEATURES -->
 <section id="features">
-
   <div class="section-title">
-
     <span>02 / FEATURES</span>
-
     <h2>SERVER FEATURES</h2>
-
     <p>Kahlheitの楽しみ方</p>
-
   </div>
 
   <div class="cards">
 
     <div class="card">
-
       <div class="number">MODE 01</div>
-
       <h3>SURVIVAL</h3>
-
       <p>
-
         広大な世界を冒険し、資源を集め、
-
         建築や探索など自由なサバイバルを楽しもう。
-
       </p>
-
     </div>
 
     <div class="card">
-
       <div class="number">MODE 02</div>
-
       <h3>MINIGAMES</h3>
-
       <p>
-
         仲間と競い合ったり、協力したり。
-
         サバイバルとは違った遊びを楽しもう。
-
       </p>
-
     </div>
 
     <div class="card">
-
       <div class="number">PLATFORM</div>
-
       <h3>CROSS PLAY</h3>
-
       <p>
-
         Java版・統合版の両方に対応。
-
         異なるエディションの仲間とも遊べます。
-
       </p>
-
     </div>
 
   </div>
-
 </section>
 
+<!-- SERVER INFO -->
 <section id="server">
-
   <div class="section-title">
-
     <span>03 / SERVER INFO</span>
-
     <h2>SERVER INFORMATION</h2>
-
     <p>サーバー基本情報</p>
-
   </div>
 
   <div class="server-panel">
-
     <table class="server-table">
-
       <tr>
-
         <th>SERVER NAME</th>
-
         <td>KAHLHEIT</td>
-
       </tr>
 
       <tr>
-
         <th>EDITION</th>
-
         <td>Java Edition / Bedrock Edition</td>
-
       </tr>
 
       <tr>
-
         <th>VERSION</th>
-
         <td>最新版対応（詳細は後日掲載）</td>
-
       </tr>
 
       <tr>
-
         <th>GAME MODE</th>
-
         <td>Survival / Minigames</td>
-
       </tr>
 
       <tr>
-
         <th>SERVER ADDRESS</th>
-
         <td><span class="status">準備中</span></td>
-
       </tr>
 
       <tr>
-
         <th>STATUS</th>
-
         <td><span class="status">情報公開準備中</span></td>
-
       </tr>
-
     </table>
-
   </div>
-
 </section>
 
+<!-- GALLERY -->
 <section id="gallery">
-
   <div class="section-title">
-
     <span>04 / GALLERY</span>
-
     <h2>GALLERY</h2>
-
     <p>Kahlheitの世界を紹介</p>
-
   </div>
 
   <div class="gallery">
-
     <div class="gallery-item">
-
       SCREENSHOT 01<br>画像を追加できます
-
     </div>
 
     <div class="gallery-item">
-
       SCREENSHOT 02<br>画像を追加できます
-
     </div>
 
     <div class="gallery-item">
-
       SCREENSHOT 03<br>画像を追加できます
-
     </div>
-
   </div>
-
 </section>
 
+<!-- RULES -->
 <section id="rules">
-
   <div class="section-title">
-
     <span>05 / RULES</span>
-
     <h2>SERVER RULES</h2>
-
     <p>快適に遊ぶための基本ルール（公開前に正式ルールへ更新してください）</p>
-
   </div>
 
   <div class="rules">
-
     <ol>
-
       <li>他のプレイヤーへの迷惑行為は禁止です。</li>
-
       <li>他人の建築物やアイテムを無断で破壊・取得しないでください。</li>
-
       <li>チート・不正ツールの使用は禁止です。</li>
-
       <li>チャットやコミュニティではマナーを守ってください。</li>
-
       <li>運営スタッフの案内・指示に従ってください。</li>
-
     </ol>
-
   </div>
-
 </section>
 
+<!-- JOIN -->
 <section id="join" class="join">
-
   <div class="join-inner">
-
     <div class="eyebrow">JOIN THE WORLD</div>
 
     <h2>YOUR ADVENTURE STARTS HERE.</h2>
 
     <p>
-
       Kahlheitで、新しい冒険を始めよう。<br>
-
       参加方法や最新情報は、こちらから確認できます。
-
     </p>
 
     <!-- Discordの招待URLを決めたら下のURLを変更 -->
-
     <a href="#" class="button">JOIN DISCORD</a>
-
   </div>
-
 </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer>
-
   <strong>KAHLHEIT</strong>
 
   <p>MINECRAFT MULTIPLAYER SERVER</p>
-
   <p>© 2026 KAHLHEIT. All Rights Reserved.</p>
 
   <p style="margin-top:10px;">
-
     Minecraft is a trademark of Mojang Studios.
-
     This website is not affiliated with Mojang or Microsoft.
-
   </p>
-
 </footer>
 
 </body>
-
 </html>
