@@ -40,7 +40,7 @@
       margin: auto;
     }
 
-    /* ヘッダー */
+    /* HEADER */
 
     header {
       display: flex;
@@ -76,7 +76,7 @@
       color: #111;
     }
 
-    /* メインビジュアル */
+    /* HERO */
 
     .hero {
       padding: 100px 0 80px;
@@ -130,7 +130,7 @@
       background: #f7f7f7;
     }
 
-    /* セクション共通 */
+    /* SECTIONS */
 
     section {
       padding: 55px 0;
@@ -159,7 +159,7 @@
       margin-top: 10px;
     }
 
-    /* プロフィール */
+    /* PROFILE */
 
     .profile-box {
       padding: 28px;
@@ -188,7 +188,7 @@
       margin: 0;
     }
 
-    /* 動画・活動カード */
+    /* VIDEO CARD */
 
     .feature-card {
       display: flex;
@@ -226,7 +226,7 @@
       font-weight: 600;
     }
 
-    /* 活動カテゴリ */
+    /* ACTIVITY */
 
     .activity-grid {
       display: grid;
@@ -250,7 +250,65 @@
       font-size: .9rem;
     }
 
-    /* SNSリンク */
+    /* KAHLHEIT */
+
+    .minecraft-link {
+      display: block;
+      margin-top: 30px;
+      padding: 30px;
+      background: #15151a;
+      border: 1px solid #64252d;
+      border-radius: 16px;
+      color: #fff;
+      text-decoration: none;
+      transition: .2s;
+      overflow: hidden;
+    }
+
+    .minecraft-link:hover {
+      border-color: #e52e3b;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    }
+
+    .minecraft-label {
+      color: #f04444;
+      font-size: .75rem;
+      letter-spacing: .15em;
+      font-weight: bold;
+    }
+
+    .minecraft-title {
+      color: #f04444;
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: .15em;
+      margin: 8px 0;
+    }
+
+    .minecraft-link p {
+      color: #ccc;
+      margin: 3px 0;
+      font-size: .9rem;
+    }
+
+    .minecraft-link .minecraft-description {
+      color: #aaa;
+      margin-top: 12px;
+    }
+
+    .minecraft-link span {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 9px 18px;
+      background: #a82732;
+      color: #fff;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: .9rem;
+    }
+
+    /* SNS LINKS */
 
     .links {
       display: grid;
@@ -281,19 +339,8 @@
       color: #777;
       font-size: .9rem;
     }
-    
-    
-<!-- Kahlheit Minecraft -->
-<a href="/minecraft.html" class="minecraft-link">
-  <div class="minecraft-label">MINECRAFT SERVER</div>
-  <div class="minecraft-title">KAHLHEIT</div>
-  <p>Java Edition / Bedrock Edition</p>
-  <p>Survival & Minigames</p>
-  <span>公式ページを見る →</span>
-</a>
 
-
-    /* お知らせ */
+    /* NEWS */
 
     .news-list {
       list-style: none;
@@ -314,7 +361,7 @@
       font-size: .9rem;
     }
 
-    /* フッター */
+    /* FOOTER */
 
     footer {
       margin-top: 60px;
@@ -324,7 +371,7 @@
       font-size: .85rem;
     }
 
-    /* スマホ表示 */
+    /* MOBILE */
 
     @media (max-width: 600px) {
       header {
@@ -357,9 +404,17 @@
         flex-direction: column;
         gap: 3px;
       }
+
+      .minecraft-link {
+        padding: 22px;
+      }
+
+      .minecraft-title {
+        font-size: 1.8rem;
+      }
     }
 
-    /* 動きを控えたい方への配慮 */
+    /* REDUCED MOTION */
 
     @media (prefers-reduced-motion: reduce) {
       html {
@@ -377,7 +432,7 @@
 
 <body>
 
-  <!-- ヘッダー -->
+  <!-- HEADER -->
 
   <header>
     <a class="brand" href="#home">hori/ホリ</a>
@@ -392,7 +447,7 @@
 
   <main>
 
-    <!-- メインビジュアル -->
+    <!-- HERO -->
 
     <div class="hero" id="home">
       <p class="eyebrow">WELCOME TO MY WEBSITE</p>
@@ -419,7 +474,7 @@
       </div>
     </div>
 
-    <!-- プロフィール -->
+    <!-- PROFILE -->
 
     <section id="profile">
       <div class="section-heading">
@@ -459,7 +514,7 @@
       </div>
     </section>
 
-    <!-- おすすめ動画 -->
+    <!-- VIDEOS -->
 
     <section id="videos">
       <div class="section-heading">
@@ -492,7 +547,7 @@
       </a>
     </section>
 
-    <!-- 活動内容 -->
+    <!-- ACTIVITY -->
 
     <section id="activity">
       <div class="section-heading">
@@ -521,7 +576,7 @@
       </div>
     </section>
 
-    <!-- お知らせ -->
+    <!-- NEWS -->
 
     <section id="news">
       <div class="section-heading">
@@ -534,6 +589,11 @@
 
       <ul class="news-list">
         <li>
+          <span class="news-date">2026.11.16</span>
+          <span>Kahlheit Minecraft公式ページへのリンクを追加しました。</span>
+        </li>
+
+        <li>
           <span class="news-date">2026.11.06</span>
           <span>ホームページを更新しました。</span>
         </li>
@@ -545,18 +605,43 @@
       </ul>
     </section>
 
-    <!-- SNS・お問い合わせ -->
+    <!-- LINKS -->
 
     <section id="links">
       <div class="section-heading">
         <p class="section-label">FIND ME ONLINE</p>
         <h2>LINKS</h2>
         <p class="section-description">
-          各SNS・お問い合わせはこちら。
+          各SNS・ゲームサーバー・お問い合わせはこちら。
         </p>
       </div>
 
-      <div class="links">
+      <!-- KAHLHEIT MINECRAFT -->
+
+      <a href="/minecraft.html" class="minecraft-link">
+        <div class="minecraft-label">
+          MINECRAFT SERVER
+        </div>
+
+        <div class="minecraft-title">
+          KAHLHEIT
+        </div>
+
+        <p>Java Edition / Bedrock Edition</p>
+        <p>Survival &amp; Minigames</p>
+
+        <p class="minecraft-description">
+          Kahlheit Minecraft Server 公式ページ。
+          サーバー紹介・参加方法・最新情報はこちら。
+        </p>
+
+        <span>公式ページを見る →</span>
+      </a>
+
+      <!-- SNS -->
+
+      <div class="links" style="margin-top: 20px;">
+
         <a
           class="link-card"
           href="https://youtube.com/@hori0105"
@@ -584,12 +669,13 @@
           <strong>CONTACT ↗</strong>
           <span>お問い合わせ</span>
         </a>
+
       </div>
     </section>
 
   </main>
 
-  <!-- フッター -->
+  <!-- FOOTER -->
 
   <footer>
     <p>© hori0105.com</p>
